@@ -20,3 +20,10 @@ A deliberately vulnerable AWS environment was created to simulate a common cloud
 To demonstrate the business impact, a file containing dummy PII/Credentials was uploaded to the exposed bucket.
 
 ![Exposed Dummy Data](img/s3-exposed-dummy-data.png)
+
+### 2. Audit Execution (Least Privilege)
+To conduct the automated assessment securely, a dedicated IAM user (`audit-admin`) was created. Following the principle of least privilege, only the AWS-managed `SecurityAudit` policy was attached, allowing read-only access to security configuration metadata without compromising the environment.
+
+![IAM Security Audit Policy](img/iam-security-audit-policy.png)
+
+*(Further steps: Scanning with Prowler and Analysis - in progress)*
